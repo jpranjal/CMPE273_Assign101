@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<button type = "button" onmouseover="catchMe();" onclick="won();" id = "but"> catch me </button> 
+
+</body>
+<script type="text/javascript">
+
+function catchMe(){
+var pos = (Math.floor(Math.random()*6) + 1) * 100;
+    var offset = 30;
+    var obj = document.getElementById('but');
+    var lblOne = document.getElementById('but');
+	
+        obj.style.position= "absolute";
+        obj.style.left = pos + offset +  "px";
+        obj.style.top = pos  + offset +  "px";	
+		obj.style.color = getColor()	;
+}
+
+function won(){
+alert("You did it!");
+}
+
+function getColor() {
+    var letters = '0123456789ABCDEF';
+    var clr = '#';
+    for (var i = 0; i < 6; i++ ) {
+        clr += letters[Math.floor(Math.random() * 16)];
+    }
+    return clr;
+}
+
+
+</script>
+
+</html>

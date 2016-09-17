@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h4 align="center">Enter a text that approves with the below regex</h4>
+<h5 align="center" class="head">^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$</h5>
+<p align = "center"><input type="text" id="text" ></p>
+<p align = "center"><button  type="button" onclick="verify();" id="buttonn">Verify</button><p align = "center">
+
+</body>
+
+<script type="text/javascript">
+function verify(){
+	var a = document.getElementsByClassName('head');
+	
+	//var regularExpression = /^[a-zA-Z][0-9]$/;
+      //  var valid = regularExpression.test("sadsa");
+        //return valid;
+	
+	reg = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+	//var reg = /^[a-zA-Z][0-9]$/;
+	var text = document.getElementById('text').value;
+	if(reg.test(text)){
+		alert("You are correct");
+		a[0].innerHTML = 'You are good with regex';
+		document.getElementById("buttonn").style.visibility='hidden';
+		}
+	else{
+		alert("Try again");
+		
+	}	
+	
+	
+	
+}
+
+
+</script>
+
+
+</html>

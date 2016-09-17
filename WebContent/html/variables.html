@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+//current date
+var currentDate = new Date();
+alert("Todays date: " + currentDate);
+//Your flight date
+var flightDate = new Date("08/31/2016");
+alert("Flight date: "  + flightDate);
+
+var daysdiff = parseInt((flightDate-currentDate) / (1000 * 60 * 60 * 24));
+
+if(daysdiff<=1)
+	alert("Pack your bags quick, you only have a couple of hours left")
+else
+	alert("Your flight is after " +parseInt((flightDate-currentDate) / (1000 * 60 * 60 * 24)) + " days"); 
+window.close();
+</script>
+
+</body>
+</html> 

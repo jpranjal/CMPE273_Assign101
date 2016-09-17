@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<form autocomplete="on">
+<table>
+<tr><td>
+First name*
+</td><td><input type="text" id="firstname" required placeholder="First name"  autofocus>
+</td></tr>
+<tr><td>
+Last name*
+</td><td><input type="text" id="lastname" placeholder="Last name" required>
+</td></tr>
+<tr><td>
+Email id*
+</td><td><input type="email" id="email" placeholder="Email Id" required> 
+</td></tr>
+<tr><td>
+Phone
+</td><td><input type="tel" id="tel" placeholder="Telephone" pattern='[\(]\d{3}[\)]\d{3}[\-]\d{4}'>
+</td></tr>
+<tr><td>
+DOB
+</td><td><input type="date" id="dob" placeholder="Date of Birth">
+</td></tr>
+<tr><td>
+Salary range
+</td><td>40<input type="range" id="range" min="40" max="90" step="10" onchange="updateTextInput(this.value);" oncuechange="updateTextInput(this.value);">90
+&nbsp;<label>Current value:</label><label id="textInput">
+</td></tr>
+<tr><td>
+<input type="submit"  onclick="submitForm();" > submit </button>
+</form>
+
+<p>Note that the form itself is not visible.</p>
+<p>Also note that the default width of a text field is 20 characters.</p>
+
+</body>
+
+<script>
+function updateTextInput(val) {
+          document.getElementById('textInput').innerHTML=val; 
+        }
+
+function submitForm() {
+          var firstName = document.getElementById('firstname').value;
+var lastName = document.getElementById('lastname').value;
+var tel = document.getElementById('tel').value;
+var dob = document.getElementById('dob').value;
+var email = document.getElementById('email').value;
+var range = document.getElementById('range').value;		  
+        }		
+		
+</script>
+
+</html>

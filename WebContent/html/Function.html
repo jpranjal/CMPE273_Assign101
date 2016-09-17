@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<button onclick="myFunction()">Can I Call my Parents?</button>
+
+<script>
+function myFunction() {
+	var dateIST = canIcallMyParents();
+	//alert(dateIST);
+	//alert(dateIST.getHours());
+	var hour = parseInt(dateIST.getHours());
+	hour = hour +22;
+	//alert(hour);
+	if(hour>7 && hour<21)
+		alert("You can call, they must be awake :)");
+	else
+		alert("They are probably sleeping, call tomorrow if its not urgent! ")
+}
+function canIcallMyParents(){
+	var currentTime = new Date();
+
+	var currentOffset = currentTime.getTimezoneOffset();
+
+	var ISTOffset = 330;  
+	var date = new Date(currentTime.getTime() + (ISTOffset + currentOffset)*60000);
+	return date;
+
+	}
+</script>
+</body>
+</html>

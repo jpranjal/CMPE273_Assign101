@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+</head>
+<body>
+	<button onclick="play('1');"> Play </button>
+</body>
+<script type="text/javascript">
+
+function getRandomArbitrary(min, max) {
+	  return Math.ceil(Math.random() * (max - min) + min);
+	}
+	
+	function play(i){
+	var num = parseInt(i);
+	var answer = window.prompt("Can your mind generate the same number as intel do? Think of a 2 digit number");
+	if(answer!=null){
+		check(answer, num);
+	}
+	}		
+	
+	function check(answer, i){
+		var random = getRandomArbitrary(10, 100);
+		if(random == answer)
+			alert("You think like intel machine. Superb!");
+		else if(Math.abs(answer-random) < 10 )
+			{alert("That was close, you get one more chance");
+			if(i<3)
+			{
+				i = i+1;
+				play(i);
+			}
+			else{
+			alert("You are not lucky today. Bye!");
+			}
+			}
+		else
+			alert("You were too far. Sorry!")
+	
+	}
+	
+		
+</script>
+
+</html>

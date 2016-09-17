@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<script src="../js/jquery-3.1.0.js"></script>
+<title>California DL</title>
+</head>
+<body>
+<table style="width: 600pt;">
+<tr>
+<td align="center">
+<table border="1" style="width: 90%">
+<thead>
+<tr>
+<th colspan="2"> Lets check if you can apply for DL </th>
+</tr>
+</thead>
+<tr>
+<td>Are you over 18 ? </td> 
+<td>
+<input type="radio" id="over18" name = "over18" title="Yes" value="yes">Yes
+<input type="radio" id="over18" name = "over18" title="No" value="no">No
+</td>
+</tr>
+<tr>
+<td>Have valid residency documents? </td> 
+<td>
+<input type="radio" id="res" name = "res" title="Yes" value="yes">Yes
+<input type="radio" id="res" name = "res" title="No" value="no">No
+</td>
+</tr>
+<tr>
+<td>Have SSN or BD/LP document? </td> 
+<td>
+<input type="radio" id="ssn" name = "ssn" title="Yes" value="yes">Yes
+<input type="radio" id="ssn" name = "ssn" title="No" value="no">No
+</td>
+</tr>
+<tr>
+</tr>
+<tr>
+<td align="center" colspan="2">
+<button onclick="submit();" > submit </button>
+</td>
+</tr>
+
+<tr> 
+<td colspan="2" align = "center">
+<p id="message"></p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+<script type="text/javascript">
+function submit(){
+	var ssn = $('input[name="ssn"]:checked').val();
+	var over18 = $('input[name="over18"]:checked').val();
+	var res = $('input[name="res"]:checked').val();
+	
+	try{
+		if(ssn == undefined || over18 == undefined || res == undefined)
+			throw "Answer all questions."
+		else if(ssn == "yes" && res == "yes" && over18 == "yes")	
+			throw "You can take an appointment with DMV office and apply."
+		else	
+			throw "You cannnot apply."
+	}
+	catch(err){
+		//alert(err);
+		document.getElementById("message").innerHTML = err;
+		}
+	finally{
+		$('input[name="ssn"]').prop('checked', false);
+		$('input[name="over18"]').prop('checked', false);
+		$('input[name="res"]').prop('checked', false);
+	}	
+	
+}
+
+
+</script>
+
+</html>

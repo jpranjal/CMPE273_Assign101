@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<table border="1" style="width: 800px;">
+<tr>
+<th style="width: 30%"> Click Below to invoke methods </th> 
+<th style="width: 70%"> Message </th>
+</tr>
+<tr>
+<td> <button type="button" onclick="notStrict()">Not Strict</button></td>
+<td> <p id = "msg1" > </p> </td>
+</tr>
+<tr>
+<td> <button type="button" onclick="strict()">Strict</button></td>
+<td> <p id = "msg2" > </p> </td>
+</tr>
+</table>
+</body>
+<script type="text/javascript">
+
+function notStrict(){
+	"use strict";	
+	try{
+	iAmGlobal = "abcd";
+	}
+	catch(err){
+		document.getElementById("msg1").innerHTML = err;
+	}
+	
+}
+
+function strict(){
+	try{
+	iAmGlobal = "abcd";
+	}
+	catch(err){
+		document.getElementById("msg2").innerHTML = err;
+	}
+	finally{
+		document.getElementById("msg2").innerHTML = "Global variable got created";
+		
+		
+	}	
+}
+
+
+</script>
+
+</html>

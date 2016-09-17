@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<script src="../js/jquery-3.1.0.js"></script>
+</head>
+<body>
+<table style="width: 600pt;">
+<tr>
+<td align = "center">
+<p> Please select the below button to get your course schedule </p>
+</td>
+</tr>
+<tr>
+<td align = "center">
+	<button title="show" onClick = "showMe();">Show</button>
+</td>
+</tr>
+<tr>
+<td align="center">
+<table border="1" style="width: 90%" id = "table">
+<tr style="font:bolder; font-size: large; width:30%;  " >
+<th>
+	Course
+</th>
+<td> Professor
+</td>
+<td> Timings
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+
+
+<script type="text/javascript">
+
+function showMe(){ 
+var data = '[{ "course":"CMPE202" , "professor":"P Nguyen", class:"Sat 12:00 pm" },' +
+'{ "course":"CMPE272" , "professor":"R Ranjan", class:"Mon 6:00 pm" },' +
+'{ "course":"CMPE273" , "professor":"S Shim", class:"MoWe 4:30pm" } ]}';
+
+data = $.parseJSON(data);
+
+$(function() {
+    $.each(data, function(i, item) {
+        var $tr = $('<tr>').append(
+            $('<td>').text(item.course),
+            $('<td>').text(item.professor),
+            $('<td>').text(item.class)
+        ); .appendTo('#table');
+    });
+});
+
+
+}
+</script>
+</html>

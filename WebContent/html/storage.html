@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<script>
+sessionStorage.clear();
+</script>
+<form>
+<table style="width: 600px" >
+<thead>
+
+<tr align="center" ><th>
+Donate for kids less privileged
+</th></tr>
+</thead>
+<tr  ><td >
+<table style="width: 99%" border="1">
+<tr>
+<td> Name* </td>
+<td> <input type="text" size="50" id ="name"></td>
+</tr>
+<tr>
+<td> Phone </td>
+<td> <input type="text" size="15" id ="phone"></td>
+</tr>
+<tr>
+<td> Address </td>
+<td> <input type="text" size="80" id = "add"></td>
+</tr>
+<tr>
+<td> Amount* </td>
+<td> <input type="text" size="10" id = "amount"></td>
+</tr>
+</table>
+</td></tr>
+<tr>
+<td>
+<button type="button" onclick="addCounter();">     &nbsp;&nbsp;&nbsp;&nbsp;submit&nbsp;&nbsp;&nbsp;&nbsp;    </button> 
+</td>
+</tr>
+</table>
+<br><br><br>
+<table border = "1">
+<tr>
+<td colspan="2"> <p id = "dis"></p></tr>
+<tr>
+<td style="width: 150px"> Biggest donator:
+</td>
+<td style="width: 200px"> <p id = "bigDon"></p>
+</td></tr>
+<tr>
+<td> Amount:
+</td>
+<td> <p id = "bigAmo"></p>
+</td></tr>
+<tr>
+<td> Total donation count:
+</td>
+<td> <p id = "donCount"></p>
+</td></tr>
+</table>
+
+<p id = "max"></p>
+</form>
+</body>
+<script>
+
+function addCounter() {
+
+var name = document.getElementById('name').value;
+var amount = parseInt(document.getElementById('amount').value);
+var add = document.getElementById('add').value;
+var phone = document.getElementById('phone').value;
+
+if(name =="" || amount == 0 || isNaN(amount) ){
+	alert("please fill mandatory fields");
+}
+else{
+	if (!sessionStorage.totalAmt)
+		sessionStorage.totalAmt = amount;
+	else
+		sessionStorage.totalAmt = Number(sessionStorage.totalAmt)+amount;
+	if (!sessionStorage.count)
+		sessionStorage.count = 1;
+	else
+		sessionStorage.count = Number(sessionStorage.count) + 1;
+	if (!sessionStorage.name)
+		sessionStorage.name = name;
+	if (!sessionStorage.amount)
+		sessionStorage.amount = amount;
+		
+	if(sessionStorage.amount < amount){
+		sessionStorage.amount = amount;
+		sessionStorage.name = name;
+	}
+	
+	document.getElementById("dis").innerHTML = "Our total donation is: $" + sessionStorage.totalAmt;
+	document.getElementById("bigDon").innerHTML = sessionStorage.name;
+	document.getElementById("bigAmo").innerHTML = "$" + sessionStorage.amount;
+	document.getElementById("donCount").innerHTML = "$" + sessionStorage.count;
+	
+	document.getElementById('name').value= "";
+	document.getElementById('amount').value = "";
+	document.getElementById('add').value = "";
+	document.getElementById('phone').value = "";
+	
+}
+}
+</script>
+</html>

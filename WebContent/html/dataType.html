@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+</head>
+<body>
+<table style="width: 800px" border="1" >
+<tr>
+<td> <p> Enter text here: 	
+<td> <input type="text" id = "in"> <button type="button" onclick="convert();" >Convert </button> </td>
+<td> <p id = "bool"> </p></td>
+<td> <p id = "integer"> </p></td>
+<td> <p id = "str"> </p></td>
+</tr>
+<tr>
+<td colspan="2"></td>
+<td> <label>Boolean</label> </td>
+<td> <label>Integer</label> </td>
+<td> <label>String</label> </td>
+</table>
+</body>
+
+<script type="text/javascript">
+function convert(){
+	var inp = document.getElementById("in").value;
+	var bool = "NA";
+	var integer = "NA";
+	var string = "NA";
+	try{
+		var integer = Number(inp);
+	}
+	catch (err){
+		integer = "NA";
+	}
+	try{
+		var string = inp.toString();
+	}
+	catch (err){
+		string = "NA";
+	}
+	try{
+		var bool = Boolean(inp);
+	}
+	catch (err){
+		bool = "NA";
+	}
+	
+	document.getElementById("integer").innerHTML = integer;
+	document.getElementById("str").innerHTML = string;
+	document.getElementById("bool").innerHTML = bool;
+}
+
+
+</script>
+</html>

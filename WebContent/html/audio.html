@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<body>
+<table>
+<tr>
+<td>
+<p> Sample audio on a HTML page: </p>
+</td>
+</tr>
+<tr>
+<td>
+<audio controls>
+	<source src="../media/Sleep Away.mp3" type="audio/mpeg">
+	</audio>	
+</td>
+</tr>
+<br><br><br>
+<tr>
+<td>
+<p> Sample video on a HTML page: </p>
+</td>
+</tr>
+<tr>
+<td>
+<div style="text-align:center"> 
+  <button onclick="playPause()">Play/Pause</button> 
+  <button onclick="big()">Big</button>
+  <button onclick="small()">Small</button>
+  <br><br>
+  <video id="video" width="400">
+    <source src="../media/The_Big_Bang_Theory_Teaser.mp4" type="video/mp4">
+    </video>
+</div>	
+</td>
+</tr>
+
+
+</table>
+
+
+<script> 
+var testVideo = document.getElementById("video"); 
+
+function playPause() { 
+    if (testVideo.paused) 
+        testVideo.play(); 
+    else 
+        testVideo.pause(); 
+} 
+
+function big() { 
+	testVideo.hieght = 500;
+    testVideo.width = 600; 
+} 
+
+function small() { 
+	testVideo.hieght = 300;
+    testVideo.width = 320; 
+} 
+</script> 
+
+</body>
+</html>

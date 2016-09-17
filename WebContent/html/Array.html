@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<form>
+	<table border="1" style="width: 400px;">
+	<tr >
+	<td>
+	<p id="1" align="center" style="font:italic; font-size:xx-large; color:teal;  richness:inherit;" onmouseenter="show(this);">First</p>
+	</td></tr>
+	<tr><td>
+	<p id="2" align="center" style="font: italic; font-size:xx-large; color:teal;  richness:inherit;" onmouseenter="show(this);">Second</p>
+	</td></tr>
+	<tr><td>
+	<p id="3" align="center" style="font: italic; font-size:xx-large; color:teal;  richness:inherit;" onmouseenter="show(this);">Third</p>
+	</td></tr>
+	<tr><td>
+	<p id="4" align="center" style="font: italic; font-size:xx-large; color:teal;  richness:inherit;" onmouseenter="show(this);">Forth</p>
+	</td></tr>
+	<tr><td>
+	<p id="5" align="center" style="font: italic; font-size:xx-large; color:teal;  richness:inherit;" onmouseenter="show(this);">Fifth</p>
+	
+	
+	</table>	
+	</form>
+</body>
+<script type="text/javascript">
+function show(item){
+	var carArr = ["Toyota","General Motors","Volkswagen","Hyundai","Ford"];
+	
+	item.innerHTML = carArr[(item.id-1)];
+}
+</script>
+
+
+</html>

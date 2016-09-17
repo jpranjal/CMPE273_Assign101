@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<table>
+<tr>
+<td>
+<button onclick="animal();">Animal</button>
+</td><td>
+<button onclick="dog();">Dog</button>
+</td></tr>
+</table>
+</body>
+<script type="text/javascript">
+
+var Animal = function() {
+    this.name = "Animal";
+}
+
+Animal.prototype.legs = "I have 4 legs";
+Animal.prototype.food="I love flesh";
+
+Animal.prototype.print = function() {
+    alert("I am " +this.name + " and " + this.food);
+}
+
+function dog(){
+	var Dog = function() {
+	    this.name = "Dog";
+	   }
+
+	Dog.prototype = Animal.prototype;
+
+	var pluto = new Dog();
+
+	pluto.print();
+}
+
+function animal(){
+
+	var bruno = new Animal();
+
+	bruno.print();
+}
+
+
+</script>
+
+</html>

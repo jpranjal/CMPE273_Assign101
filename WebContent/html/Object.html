@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+
+<script type="text/javascript">
+
+function bus(x,y,z) {
+	this.start = x;
+	this.end = y;
+	this.stop = z;
+	}
+
+	//multiple objects of class
+	var a22 = new bus("Palo Alto","EastRidge","7th street");
+	var a23 = new bus("DeAnza","Alum Rock","7th street");
+	var a82 = new bus("Westgate", "Downtown", "2nd street");
+	var a64 = new bus("Almaden LRT station", "McKee and White", "San Fernando street");
+	var a81 = new bus("Moffett Field", "Ames Center", "San Fernando street");
+	var a72 = new bus("Senter and Monterey", "Downtown", "San Fernando street");
+
+	//list of buses
+	var busList = {
+		23 : a23, 22:a22, 81:a81, 82:a82, 64:a64, 72:a72
+	};
+
+	var answer = window.prompt("Enter bus number for which you want information. Options: 22, 23, 64, 82, 72, 81","22");
+	if(answer!=null){
+		var bus = "a"+answer;
+		alert("Bus travels between " + busList[answer].start + " and " + busList[answer].end + ". Nearest top for SJSU is " + busList[answer].stop);
+	}
+		
+	window.close();
+</script>
+
+</head>
+<body>
+
+</body>
+</html>
